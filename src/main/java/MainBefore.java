@@ -37,7 +37,7 @@ public final class MainBefore
         R.setIndex(new Index(R));
         S.setIndex(new Index(S));
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 1; i < 50; i++)
         {
             System.out.printf("%d\t", i);
 
