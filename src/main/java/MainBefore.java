@@ -41,14 +41,21 @@ public final class MainBefore
         {
             System.out.printf("%d\t", i);
 
-            timer(() ->
+            if ("normal".equals(args[0]))
             {
-                MutableInteger result = new MutableInteger();
-                beforeJoin(R, S, 3, (r, s) -> result.value += r.start + s.end);
-                return result.value;
-            });
+                timer(() ->
+                {
+                    MutableInteger result = new MutableInteger();
+                    beforeJoin(R, S, 3, (r, s) -> result.value += r.start + s.end);
+                    return result.value;
+                });
+            }
 
-            timer(() -> beforeJoinInlined(R, S, 3));
+            if ("inlined".equals(args[0]))
+            {
+                timer(() -> beforeJoinInlined(R, S, 3));
+            }
+
 
             System.out.println();
         }
